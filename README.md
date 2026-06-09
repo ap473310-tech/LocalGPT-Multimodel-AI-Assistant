@@ -421,7 +421,7 @@ streamlit run app.py
 
 ---
 
-# Interview Explanation
+## Overview
 
 LocalGPT AI Assistant is a multimodal Generative AI platform that integrates local LLMs, Retrieval-Augmented Generation (RAG), Computer Vision, Speech Processing, and Image Generation into a single application.
 
