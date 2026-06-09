@@ -2,9 +2,9 @@
 
 ## Project Overview
 
-LocalGPT AI Assistant is an enterprise-grade offline-first Generative AI platform developed using Streamlit, Ollama, LangChain, FAISS, Stable Diffusion, YOLOv8, and Local Large Language Models.
+LocalGPT AI Assistant is a multimodal Generative AI application developed using Streamlit, Ollama, LangChain, FAISS, Stable Diffusion, YOLOv8, and Local Large Language Models.
 
-The application enables users to interact with AI through multiple modalities including text, voice, documents, and images while running completely on local infrastructure without relying on cloud-based AI services.
+The application enables users to interact with AI through multiple modalities including text, voice, documents, and images while running primarily on local infrastructure using open-source AI models.
 
 The project combines Conversational AI, Retrieval-Augmented Generation (RAG), Computer Vision, Image Generation, Speech Processing, and Multi-Document Intelligence into a single unified platform.
 
@@ -24,7 +24,7 @@ This project addresses these issues by providing a fully local AI ecosystem powe
 
 ---
 
-# Key Features
+## Key Features
 
 ## 1. Local LLM Chat Assistant
 
@@ -260,12 +260,18 @@ Final Answer
 # Tech Stack
 
 ## Frontend
-
 * Streamlit
 
 ## Backend
-
 * Python
+ 
+## Supported Models
+- Llama 3
+- Mistral
+- Gemma 2B
+- Phi-3
+- TinyLlama
+- LLaVA
 
 ## LLM Layer
 
@@ -371,9 +377,9 @@ LocalGPT-AI-Assistant/
 ## Clone Repository
 
 ```bash
-git clone https://github.com/your-repository/localgpt-ai-assistant.git
+git clone https://github.com/ap473310-tech/LocalGPT-Multimodal-RAG-AI-Assistant.git
 
-cd localgpt-ai-assistant
+cd LocalGPT-Multimodal-RAG-AI-Assistant
 ```
 
 ## Install Dependencies
@@ -418,15 +424,3 @@ streamlit run app.py
 * Milvus Integration
 * Cloud Deployment
 * User Role Management
-
----
-
-## Overview
-
-LocalGPT AI Assistant is a multimodal Generative AI platform that integrates local LLMs, Retrieval-Augmented Generation (RAG), Computer Vision, Speech Processing, and Image Generation into a single application.
-
-The frontend is built using Streamlit, while Ollama is used for running local Large Language Models. For document intelligence, a complete RAG pipeline is implemented using LangChain, Sentence Transformers, and FAISS. Users can upload PDFs, DOCX, PPTX, CSV, Excel, and TXT files, and the system retrieves relevant document chunks before generating responses.
-
-The platform also includes multimodal capabilities such as Stable Diffusion Turbo for image generation, YOLOv8 for object detection, and LLaVA for image understanding. Voice interaction is enabled through SpeechRecognition and Pyttsx3, while SQLite handles user authentication and session management.
-
-The primary objective of the project is to create a privacy-focused, offline-first AI assistant capable of handling text, documents, voice, and images within a unified local AI ecosystem.
