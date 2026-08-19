@@ -20,7 +20,6 @@ opencv-python-headless
 pillow
 
 speechrecognition
-pyttsx3
 streamlit-mic-recorder
 
 pandas
