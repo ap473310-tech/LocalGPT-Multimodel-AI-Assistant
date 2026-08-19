@@ -1,9 +1,8 @@
+import speech_recognition as sr
 from models.ollama_models import AVAILABLE_MODELS
 import streamlit as st
 import ollama
 from datetime import datetime
-import speech_recognition as sr
-import pyttsx3
 from streamlit_mic_recorder import mic_recorder
 import sqlite3
 import torch
@@ -402,27 +401,9 @@ selected_model = st.sidebar.selectbox(
 )
 # ---------------- VOICE ASSISTANT SETUP ---------------- #
 
-if engine is not None:
-    engine.say(response)
-    engine.runAndWait()
-else:
-    st.warning("Text-to-Speech is not available on the cloud deployment.")
-
-voices = engine.getProperty('voices')
-
-if len(voices) > 1:
-    engine.setProperty('voice', voices[1].id)
+# ---------------- VOICE ASSISTANT SETUP ---------------- #
 
 recognizer = sr.Recognizer()
-
-def speak_text(text):
-
-    try:
-        engine.say(text)
-        engine.runAndWait()
-
-    except Exception as e:
-        st.error(f"TTS Error: {e}")
 
 def speech_to_text(audio_bytes):
 
@@ -852,9 +833,6 @@ if voice_data:
         "role": "assistant",
         "content": ai_response
     })
-
-    # Speak Response
-    speak_text(ai_response)
 # ---------------- CHAT INPUT ---------------- #
 
 user_input = st.chat_input("💬 Ask anything...")
