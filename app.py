@@ -404,8 +404,10 @@ selected_model = st.sidebar.selectbox(
 
 @st.cache_resource
 def get_engine():
-
-    return pyttsx3.init()
+    try:
+        return pyttsx3.init()
+    except Exception:
+        return None
 
 engine = get_engine()
 
