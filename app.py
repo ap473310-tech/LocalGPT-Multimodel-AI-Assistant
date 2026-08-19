@@ -402,16 +402,6 @@ selected_model = st.sidebar.selectbox(
 )
 # ---------------- VOICE ASSISTANT SETUP ---------------- #
 
-@st.cache_resource
-def get_engine():
-    try:
-        import pyttsx3
-        engine = pyttsx3.init()
-        engine.setProperty("rate", 170)
-        return engine
-    except Exception:
-        return None
-
 if engine is not None:
     engine.say(response)
     engine.runAndWait()
