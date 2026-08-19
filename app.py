@@ -405,14 +405,18 @@ selected_model = st.sidebar.selectbox(
 @st.cache_resource
 def get_engine():
     try:
-        return pyttsx3.init()
+        import pyttsx3
+        engine = pyttsx3.init()
+        engine.setProperty("rate", 170)
+        return engine
     except Exception:
         return None
 
-engine = get_engine()
-
-engine.setProperty('rate', 170)
-engine.setProperty('volume', 1.0)
+if engine is not None:
+    engine.say(response)
+    engine.runAndWait()
+else:
+    st.warning("Text-to-Speech is not available on the cloud deployment.")
 
 voices = engine.getProperty('voices')
 
